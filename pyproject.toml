@@ -3,6 +3,12 @@ name = "sololc-vvault"
 version = "0.1.0"
 description = "vlt - Minimalist Secure Vault (Vvault CLI)"
 readme = "README.md"
+license = { text = "BSD-3-Clause" }
+classifiers = [
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
 authors = [
     { name = "Josh Klein", email = "gigacoderx@gmail.com" }
 ]
@@ -19,6 +25,11 @@ dependencies = [
     "rich>=14.3.3",
     "typer>=0.24.1",
 ]
+
+[project.urls]
+Homepage = "https://github.com/nuv0x/sololc-vvault"
+Repository = "https://github.com/nuv0x/sololc-vvault"
+Issues = "https://github.com/nuv0x/sololc-vvault/issues"
 
 [build-system]
 requires = ["hatchling"]

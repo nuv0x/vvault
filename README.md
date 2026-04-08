@@ -1,4 +1,7 @@
-# 🛡️ Vvault (vlt)
+# 🛡️ Sololc Vvault (vlt)
+[![PyPI version](https://img.shields.io/pypi/v/sololc-vvault.svg?color=blue)](https://pypi.org/project/sololc-vvault/)
+[![Python versions](https://img.shields.io/pypi/pyversions/sololc-vvault.svg)](https://pypi.org/project/sololc-vvault/)
+[![License](https://img.shields.io/badge/License-BSD--3--Clause-orange.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
 **An elegant, functional, and secure CLI authenticator built for power users.**
 
