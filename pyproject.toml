@@ -1,6 +1,6 @@
 [project]
 name = "sololc-vvault"
-version = "0.1.0"
+version = "0.1.1"
 description = "vlt - Minimalist Secure Vault (Vvault CLI)"
 readme = "README.md"
 license = { text = "BSD-3-Clause" }
@@ -36,6 +36,6 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project.scripts]
-vlt = "vvault:app"  # Key: Map the vlt command to your program
+vlt = "sololc_vvault:app"  # Key: Map the vlt command to your program
 
 

@@ -11,7 +11,7 @@ import cv2
 import numpy as np
 from PIL import Image
 import pyperclip
-from vvault.core import storage, totp, vault
+from sololc_vvault.core import storage, totp, vault
 
 app = typer.Typer(help="vlt - Minimalist Secure Vault (Vvault CLI)", add_completion=False)
 console = Console()
