@@ -37,6 +37,7 @@ Repository = "https://github.com/nuv0x/sololc-vvault"
 Issues = "https://github.com/nuv0x/sololc-vvault/issues"
 Sponsor = "https://ko-fi.com/sololc"
 
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"

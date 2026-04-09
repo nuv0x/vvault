@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/sololc/sololc-vvault/main/assets/sololc-vvault.svg" width="160" height="160" alt="vlt logo">
+  <img src="https://cdn.jsdelivr.net/gh/nuv0x/sololc-vvault@main/assets/sololc-vvault.svg" width="160" height="160" alt="vlt logo">
 </p>
 
 # 🛡️ sololc-vvault (vlt)
@@ -41,7 +41,7 @@ Ensure you have **Python 3.11+** installed. We recommend [uv](https://github.com
 
 ```bash
 # Clone the repository
-git clone [https://github.com/nuv0x/sololc-vvault.git](https://github.com/nuv0x/sololc-vvault.git)
+git clone https://github.com/nuv0x/sololc-vvault.git
 cd sololc-vvault
 
 # Install dependencies and install the tool in editable mode
@@ -107,7 +107,8 @@ The project follows a modular, functional design for clarity and maintainability
 
 ## ☕ Support the Project
 If vlt makes your terminal life easier, consider supporting the development!
-[![Support me on Ko-fi](https://img.shields.io/badge/Support%20me%20on%20Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/sololc)
+
+* [![Support me on Ko-fi](https://img.shields.io/badge/Support%20me%20on%20Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/sololc)
 
 
 ## 🤝 Contributing
