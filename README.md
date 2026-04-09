@@ -1,28 +1,48 @@
-# 🛡️ Sololc Vvault (vlt)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/sololc/sololc-vvault/main/assets/sololc-vvault.svg" width="160" height="160" alt="vlt logo">
+</p>
+
+# 🛡️ sololc-vvault (vlt)
+
 [![PyPI version](https://img.shields.io/pypi/v/sololc-vvault.svg?color=blue)](https://pypi.org/project/sololc-vvault/)
 [![Python versions](https://img.shields.io/pypi/pyversions/sololc-vvault.svg)](https://pypi.org/project/sololc-vvault/)
 [![License](https://img.shields.io/badge/License-BSD--3--Clause-orange.svg)](https://opensource.org/licenses/BSD-3-Clause)
+[![Sponsor](https://img.shields.io/badge/Sponsor-Ko--fi-F16061?logo=ko-fi&logoColor=white)](https://ko-fi.com/sololc)
 
-**An elegant, functional, and secure CLI authenticator built for power users.**
+**Zero-Knowledge, Offline-First, and High-Performance CLI Authenticator.**
 
-`Vvault` (pronounced *Volt*) is a modern 2FA (Two-Factor Authentication) secret manager designed for the terminal. It balances industrial-grade security with a "bright and shiny" user experience, allowing you to manage your TOTP tokens with style and speed.
+`vlt` (pronounced *Volt*) is a modern 2FA (Two-Factor Authentication) manager designed for the terminal. It provides industrial-grade security with a minimalist user experience, ensuring your TOTP secrets remain yours alone.
+
+> 🚀 **Building fast, secure, and offline-first tools for the modern terminal.**
+> 💡 **Passionate about developer productivity and system transparency.**
+> 🏠 **Keep it local. ⚡ Keep it simple.**
+
+---
+
+## 🔒 Security Architecture
+
+Unlike many authenticators, `vlt` employs a **Zero-Knowledge** encryption model. Your data is never stored in plain text.
+
+* **Key Derivation (KDF)**: We use **Argon2id** (the winner of the Password Hashing Competition) to derive high-entropy keys from your Master Password. 
+    * *Parameters*: `memory_cost=64MB`, `iterations=3`, `lanes=4`.
+* **Encryption**: All data is encrypted using **AES-256-GCM** (Galois/Counter Mode), providing both confidentiality and authenticity (tamper-proof).
+* **Local-Only**: No cloud sync, no tracking, no telemetry. Your vault stays in `~/.vlt/`.
 
 ## ✨ Features
 
-* **⚡️ Live Dashboard**: A visually stunning, real-time terminal UI to monitor all your TOTP codes and their expiration countdowns.
-* **🔒 Local-First Security**: Secrets are stored physically in the `~/.vlt/` directory with strict file permissions.
-* **📂 Smart Import**: Seamlessly import accounts via QR code images or standard `otpauth://` URL links.
-* **📋 Clipboard Integration**: Copy verification codes directly to your clipboard with a single flag for lightning-fast logins.
-* **🛠️ Modern Tech Stack**: Powered by `uv`, `Typer`, `Rich`, and `QReader` for a lightweight yet robust experience.
+* **⚡️ Live Dashboard**: A real-time terminal UI (`Rich` powered) to monitor TOTP codes and expiration countdowns.
+* **📂 Smart Import**: Seamlessly import via QR codes or standard `otpauth://` URLs.
+* **📋 Clipboard Integration**: Copy codes with a single flag for lightning-fast logins.
+* **🛠️ Modern Tech Stack**: Built with `uv`, `Typer`, `cryptography`, and `QReader`.
 
 ## 🚀 Installation
 
-Ensure you have **Python 3.11+** installed. We recommend using [uv](https://github.com/astral-sh/uv) for the fastest installation and performance.
+Ensure you have **Python 3.11+** installed. We recommend [uv](https://github.com/astral-sh/uv) for the best experience.
 
 ```bash
 # Clone the repository
-git clone [https://github.com/nuv0x/Vvault.git](https://github.com/nuv0x/Vvault.git)
-cd Vvault
+git clone [https://github.com/nuv0x/sololc-vvault.git](https://github.com/nuv0x/sololc-vvault.git)
+cd sololc-vvault
 
 # Install dependencies and install the tool in editable mode
 uv sync
@@ -81,9 +101,14 @@ vlt backup ./my_backup.yaml
 
 ## 🛠️ Project Structure
 The project follows a modular, functional design for clarity and maintainability:
-* src/relay_2fa/core/: Core logic layer containing TOTP generation, physical storage, and vault operations.
-* src/relay_2fa/main.py: Interaction layer featuring the polished CLI interface built with Typer and Rich.
+* src/sololc_vvault/core/: Core logic layer containing TOTP generation, physical storage, and vault operations.
+* src/sololc_vvault/main.py: Interaction layer featuring the polished CLI interface built with Typer and Rich.
 * ~/.vlt/: The default local data storage path.
+
+## ☕ Support the Project
+If vlt makes your terminal life easier, consider supporting the development!
+[![Support me on Ko-fi](https://img.shields.io/badge/Support%20me%20on%20Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/sololc)
+
 
 ## 🤝 Contributing
 Contributions are welcome! If you have ideas for new features (such as supporting the Google Migration protocol or adding Master Password encryption), please feel free to:

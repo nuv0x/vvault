@@ -1,0 +1,16 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1024" height="1024" rx="160" fill="#24292E"/> 
+  
+  <path d="M512 150L820 250V550C820 715 685 850 512 850C339 850 204 715 204 550V250L512 150Z" 
+        stroke="#4ADE80" 
+        stroke-width="50" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+  
+  <circle cx="512" cy="500" r="100" stroke="#4ADE80" stroke-width="50"/>
+  
+  <path d="M512 600V710" 
+        stroke="#4ADE80" 
+        stroke-width="50" 
+        stroke-linecap="round"/>
+</svg>

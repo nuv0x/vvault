@@ -1,23 +1,47 @@
 import os
 from pathlib import Path
 
+# Basic path configuration
+VAULT_DIR = Path.home() / ".vlt"
+VAULT_FILE = VAULT_DIR / "vault.vlt"
+
 def get_vlt_path() -> Path:
     """Obtain and ensure that the ~/.vlt directory exists."""
-    path = Path.home() / ".vlt"
-    if not path.exists():
-        path.mkdir(parents=True, exist_ok=True)
+    if not VAULT_DIR.exists():
+        VAULT_DIR.mkdir(parents=True, exist_ok=True)
         if os.name != 'nt':
-            os.chmod(path, 0o700)
-    return path
+            os.chmod(VAULT_DIR, 0o700)
+    return VAULT_DIR
 
 def get_vault_file() -> Path:
-    return get_vlt_path() / "vault.yaml"
+    """Return to vault file path"""
+    return VAULT_FILE
+
+def ensure_storage_path():
+    """Initialize storage environment"""
+    get_vlt_path()
+
+def vault_exists() -> bool:
+    """Check if the vault documents exist and are valid."""
+    return VAULT_FILE.is_file()
+
+def write_vault_raw(content: str):
+    """Write the raw string (usually encrypted Base64 data)."""
+    ensure_storage_path()
+    VAULT_FILE.write_text(content, encoding="utf-8")
+    if os.name != 'nt':
+        os.chmod(VAULT_FILE, 0o600)
+
+def read_vault_raw() -> str:
+    """Read raw string data"""
+    if not vault_exists():
+        return ""
+    return VAULT_FILE.read_text(encoding="utf-8")
+
+# --- Compatibility wrapper (if your old code calls these names) ---
 
 def write_vault(content: str):
-    """Write encrypted content"""
-    get_vault_file().write_text(content, encoding="utf-8")
+    write_vault_raw(content)
 
 def read_vault() -> str:
-    """Read the content; if it does not exist, return an empty string."""
-    file = get_vault_file()
-    return file.read_text(encoding="utf-8") if file.exists() else ""
+    return read_vault_raw()

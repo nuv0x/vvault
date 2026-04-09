@@ -1,6 +1,6 @@
 [project]
 name = "sololc-vvault"
-version = "0.1.1"
+version = "0.1.2"
 description = "vlt - Minimalist Secure Vault (Vvault CLI)"
 readme = "README.md"
 license = { text = "BSD-3-Clause" }
@@ -15,21 +15,27 @@ authors = [
 requires-python = ">=3.11.15"
 dependencies = [
     "cryptography>=46.0.7",
-    "opencv-python>=4.13.0.92",
     "pillow>=12.2.0",
     "pyotp>=2.9.0",
     "pyperclip>=1.11.0",
-    "python-dotenv>=1.2.2",
     "pyyaml>=6.0.3",
-    "qrcode>=8.2",
+    "pyzbar>=0.1.9",
     "rich>=14.3.3",
     "typer>=0.24.1",
 ]
 
+[dependency-groups]
+dev = [
+    "pytest>=9.0.3",
+    "qrcode>=8.2",
+]
+
 [project.urls]
 Homepage = "https://github.com/nuv0x/sololc-vvault"
+Documentation = "https://github.com/nuv0x/sololc-vvault#readme"
 Repository = "https://github.com/nuv0x/sololc-vvault"
 Issues = "https://github.com/nuv0x/sololc-vvault/issues"
+Sponsor = "https://ko-fi.com/sololc"
 
 [build-system]
 requires = ["hatchling"]
